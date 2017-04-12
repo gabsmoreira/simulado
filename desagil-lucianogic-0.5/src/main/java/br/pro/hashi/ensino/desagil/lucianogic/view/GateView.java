@@ -106,36 +106,135 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 
 		g.drawImage(image, 20, 20, 184, 140, null);
 		if (gate.getSize() == 2){
-		int angle = 60; 
+			g.fillArc(12, 50, 10, 10, 0, 180);
+			g.fillArc(12, 90, 10, 10, 0, 180);
 
-		//First Lever
-		
-	    int startX = 7;
-	    int startY = 75;
-	    int length = 20 ;
+			if ((switches[0].read() == false) && (switches[1].read() == false)){
+				int angle = 60; 
+	
+				//Second Lever
+				
+			    int startX = 7;
+			    int startY = 75;
+			    int length = 20 ;
+	
+			    int endX = startX + (int)(Math.cos(Math.toRadians(angle)) * length);
+			    int endY = startY + (int)(Math.sin(Math.toRadians(angle)) * length);
+	
+			    g.drawLine(startX, startY, endX, endY);
+				g.fillOval(2,70,6,6);
 
-	    int endX = startX + (int)(Math.cos(Math.toRadians(angle)) * length);
-	    int endY = startY + (int)(Math.sin(Math.toRadians(angle)) * length);
-	    g.fillArc(12, 90, 10, 10, 0, 180);
+      // First Lever
+  
+  int angle_2 = 60; 
 
-	    g.drawLine(startX, startY, endX, endY);
-		g.fillOval(2,70,6,6);
-		
-		
-		// Second Lever
-		
-		int angle_2 = 60; 
+    int startX_2 = 7;
+    int startY_2 = 35;
+    int length_2 = 20 ;
 
-	    int startX_2 = 7;
-	    int startY_2 = 35;
-	    int length_2 = 20 ;
+    int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
+    int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
 
-	    int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
-	    int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
-	    g.fillArc(12, 50, 10, 10, 0, 180);
+    g.drawLine(startX_2, startY_2, endX_2, endY_2);
+  g.fillOval(2,30,6,6);
 
-	    g.drawLine(startX_2, startY_2, endX_2, endY_2);
-		g.fillOval(2,30,6,6);
+  }
+if ((switches[1].read() == true) && (switches[0].read() == true)){
+
+        // First Lever
+
+      int angle_2 = 120; 
+
+      int startX_2 = 27;
+      int startY_2 = 35;
+      int length_2 = 20 ;
+
+      int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
+      int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
+
+      g.drawLine(startX_2, startY_2, endX_2, endY_2);
+      g.fillOval(25,30,6,6);
+
+      int angle = 120; 
+      
+    //Second Lever
+    
+      int startX = 27;
+      int startY = 75;
+      int length = 20 ;
+
+      int endX = startX + (int)(Math.cos(Math.toRadians(angle)) * length);
+      int endY = startY + (int)(Math.sin(Math.toRadians(angle)) * length);
+
+      g.drawLine(startX, startY, endX, endY);
+    g.fillOval(25,70,6,6);
+
+      }
+				    
+if ((switches[0].read() == true) && (switches[1].read() == false)){
+		int angle = 120; 
+
+            // First Lever
+
+          int angle_2 = 120; 
+
+          int startX_2 = 27;
+          int startY_2 = 35;
+          int length_2 = 20 ;
+
+          int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
+          int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
+
+          g.drawLine(startX_2, startY_2, endX_2, endY_2);
+          g.fillOval(25,30,6,6);
+
+          int angle2 = 60; 
+
+            
+            //Second Lever
+  					
+  				    int startX = 7;
+  				    int startY = 75;
+  				    int length = 20 ;
+  		
+  				    int endX = startX + (int)(Math.cos(Math.toRadians(angle2)) * length);
+  				    int endY = startY + (int)(Math.sin(Math.toRadians(angle2)) * length);
+  		
+  				    g.drawLine(startX, startY, endX, endY);
+  					g.fillOval(2,70,6,6);
+}
+
+    if ((switches[1].read() == true) && (switches[0].read() == false)){
+              // First Lever
+
+              int angle_2 = 60; 
+
+              int startX_2 = 7;
+              int startY_2 = 35;
+              int length_2 = 20 ;
+
+              int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
+              int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
+
+              g.drawLine(startX_2, startY_2, endX_2, endY_2);
+              g.fillOval(2,30,6,6);
+
+
+
+              //Second Lever
+              int angle = 120;
+              
+                int startX = 27;
+                int startY = 75;
+                int length = 20 ;
+        
+                int endX = startX + (int)(Math.cos(Math.toRadians(angle)) * length);
+                int endY = startY + (int)(Math.sin(Math.toRadians(angle)) * length);
+        
+                g.drawLine(startX, startY, endX, endY);
+              g.fillOval(25,70,6,6);
+
+      }
 		}
 		
 		if (gate.getSize() == 1){
@@ -173,6 +272,56 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 			
 			}
 		if (gate.getSize() == 3){
+			if ((switches[2].read() == true) && (switches[1].read() == false) && (switches[0].read() == false)) {
+				//First Lever
+				int angle = 60;
+				
+			    int startX = 7;
+			    int startY = 75;
+			    int length = 20 ;
+
+			    int endX = startX + (int)(Math.cos(Math.toRadians(angle)) * length);
+			    int endY = startY + (int)(Math.sin(Math.toRadians(angle)) * length);
+			    g.fillArc(12, 90, 10, 10, 0, 180);
+
+			    g.drawLine(startX, startY, endX, endY);
+				g.fillOval(2,70,6,6);
+				
+				
+				// Second Lever
+				
+				int angle_2 = 60; 
+
+			    int startX_2 = 7;
+			    int startY_2 = 35;
+			    int length_2 = 20 ;
+
+			    int endX_2 = startX_2 + (int)(Math.cos(Math.toRadians(angle_2)) * length_2);
+			    int endY_2 = startY_2 + (int)(Math.sin(Math.toRadians(angle_2)) * length_2);
+			    g.fillArc(12, 50, 10, 10, 0, 180);
+
+			    g.drawLine(startX_2, startY_2, endX_2, endY_2);
+				g.fillOval(2,30,6,6);
+				
+				
+				
+				// Third Lever
+				
+				int angle_3 = 120; 
+
+			    int startX_3 = 27;
+			    int startY_3 = 115;
+			    int length_3 = 20 ;
+
+			    int endX_3 = startX_3 + (int)(Math.cos(Math.toRadians(angle_3)) * length_3);
+			    int endY_3 = startY_3 + (int)(Math.sin(Math.toRadians(angle_3)) * length_3);
+			    g.fillArc(12, 130, 10, 10, 0, 180);
+
+			    g.drawLine(startX_3, startY_3, endX_3, endY_3);
+				g.fillOval(25,110,6,6);
+				
+			}
+			else{
 			int angle = 60; 
 
 			//First Lever
@@ -220,6 +369,7 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 					    g.drawLine(startX_3, startY_3, endX_3, endY_3);
 						g.fillOval(2,110,6,6);
 			}
+			}
 
 		// Evita bugs visuais em alguns sistemas operacionais.
 		getToolkit().sync();
@@ -235,7 +385,7 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 		    if ( screenX>=2 && screenX<= 24 ) {
 		    	if ( screenY>=53  && screenY<= 74){
 		    		switches[0].setOn(!switches[0].read());
-		    		System.out.println(switches[0].read());
+		    		outBox.setSelected(gate.read());
 		    	}
 		    }
 	    }
@@ -244,12 +394,12 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 		    if ( screenX>=2 && screenX<= 24 ) {
 		    	if ( screenY>=73  && screenY<= 96){
 		    		switches[1].setOn(!switches[1].read());
-
+		    		outBox.setSelected(gate.read());
 		    		
 		    	}
 		    	else if ( screenY>=31  && screenY<= 55){
 		    		switches[0].setOn(!switches[0].read());
-
+		    		outBox.setSelected(gate.read());
 		    	}
 		    }
 	    }
@@ -259,18 +409,19 @@ public class GateView extends FixedPanel implements ItemListener, MouseListener 
 		    if ( screenX>=2 && screenX<= 24 ) {
 		    	if ( screenY>=73  && screenY<= 96){
 		    		switches[1].setOn(!switches[1].read());
-
+		    		outBox.setSelected(gate.read());
 	
 		    		
 		    	}
 		    	else if ( screenY>=31  && screenY<= 55){
 		    		switches[0].setOn(!switches[0].read());
+		    		outBox.setSelected(gate.read());
 
 		    	}
 		    	
 		    	else if ( screenY>=112  && screenY<= 133){
 		    		switches[2].setOn(!switches[2].read());
-
+		    		outBox.setSelected(gate.read());
 		    	}
 		    }
 	    }
